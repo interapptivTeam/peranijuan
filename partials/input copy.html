@@ -1,0 +1,159 @@
+<div id="nav" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="Brand" class="navbar-brand"><img src="images/brand.png"></a>
+    </div>
+    <div id="navsub" class="navbar-collapse collapse">
+<!--       <ul class="nav navbar-nav">
+        <li><a href="#what">what</a></li>
+        <li><a href="#why">why</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#clients">clients & partners</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul> -->
+    </div><!--/.nav-collapse -->
+</div>
+
+<div id="InputPanel" class="Panels container">
+  <div class="col-sm-12">
+    <div id="PatientInfo" data-ng-hide="PatientInfo">
+      <form id="PatientInfoForm" role="form" class="form-horizontal" onsubmit="return false">
+        <div id="PatientFirstInput" class="form-group">
+          <label class="sr-only" for="PatientFirst">Patient First Name</label>
+          <input type="text" id="PatientFirst" name="PatientFirst" class="form-control" data-ng-model="PatientFirst" placeholder="Patient First Name">
+        </div>
+        <div id="PatientLastInput" class="form-group">
+          <label class="sr-only" for="PatientLast">Patient Last Name</label>
+          <input type="text" id="PatientLast" name="PatientLast" class="form-control" data-ng-model="PatientLast" placeholder="Patient Last Name">
+        </div>
+        <div id="PatientAddressInput" class="form-group">
+          <label class="sr-only" for="PatientAddress">Patient Address</label>
+          <input type="text" id="PatientAddress" name="PatientAddress" class="form-control" data-ng-model="PatientAddress" placeholder="Patient Address">
+        </div>
+        <div id="PatientAgeInput" class="form-group">
+          <label class="sr-only" for="PatientAge">Patient Age</label>
+          <input type="text" id="PatientAge" name="PatientAge" class="form-control" data-ng-model="PatientAge" placeholder="Patient Age">
+        </div>
+        <div id="PatientEmailInput" class="form-group">
+          <label class="sr-only" for="PatientEmail">Patient Number</label>
+          <input type="email" id="PatientEmail" name="PatientEmail" class="form-control" data-ng-model="PatientEmail" placeholder="Patient E-mail">
+        </div>
+        <div id="PatientNumberInput" class="form-group">
+          <label class="sr-only" for="PatientNumber">Patient Number</label>
+          <input type="text" id="PatientNumber" name="PatientNumber" class="form-control" data-ng-model="PatientNumber" placeholder="Patient Mobile Number">
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary btn-block" data-ng-click="prescribe()">
+                Next
+            </button>
+        </div>
+      </form>
+    </div>
+    <div id="DrugInfo" data-ng-show="DrugInfo">
+      <div id="PatientInfoCard" class="InfoCards Panels">
+        <h4>Patient Info</h4>
+        <span>Name: {{PatientFirst}} {{PatientLast}}</span><br>
+        <span>Address: {{PatientAddress}}</span><br>
+        <span>E-mail: {{PatientEmail}}</span><br>
+        <span>Number: {{PatientNumber}}</span><br>
+        <span>Age: {{PatientAge}}</span>
+      </div>
+
+      <div id="PatientMedicineCard" class="InfoCards Panels">
+        <strong>Rx</strong><hr id="RXhr">
+        <span class="textSmall">Generic Name: {{GenericName}}</span><br>
+        <span class="textSmall">Medicine Name: {{MedicineName}}</span><br>
+        <span class="textSmall">Dosage: {{DosageNumber2}} {{DosageForm}}, {{DosageNumber1}}{{DosageUnit}}</span><br>
+        <span class="textSmall">Frequency: {{Frequency}}</span><br>
+        <span class="textSmall">Time: {{Time}}</span><br>
+        <span class="textSmall">Start Date: {{StartDate.toDateString()}}</span><br>
+        <span class="textSmall">End Date: {{EndDate.toDateString()}}</span><br>
+      </div>
+
+      <br>
+
+      <form id="DrugInfoForm" class="Panels" role="form" onsubmit="return false">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label class="sr-only" for="Drug">Drug List</label>
+            <input type="text" id="Drug" name="Drug" class="form-control" data-ng-model="Drug" typeahead="drug for drug in drugsListKey | filter:$viewValue" data-ng-keyup="GenericName = drugsList[Drug]" placeholder="Choose Drug">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <input type="text" data-ng-model="GenericName" class="form-control" data-ng-disabled="GenericNameText" placeholder="Generic Name">
+          </div>
+        </div><!-- 
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <span><strong>Dosage</strong></span>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="DosageNumber2"><small>Number/Quantity</small></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label for="DosageNumber1"><small>Weight/Volume</small></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 form-group Number1">
+            <select type="text" id="DosageNumber2" name="DosageNumber2" class="form-control Number1" data-ng-model="DosageNumber2" data-ng-options="number for number in dosageNumber2"></select>
+          </div>
+          <div class="col-sm-4 Numbers">
+            <select type="text" id="DosageForm" name="DosageForm" class="form-control Number2" data-ng-model="DosageForm" data-ng-options="form for form in dosageForm"></select>
+          </div>
+          <div class="col-sm-2 form-group Numbers2">
+            <select type="text" id="DosageNumber1" name="DosageNumber1" class="form-control Numbers1" data-ng-model="DosageNumber1" data-ng-options="number for number in dosageNumber1"></select>
+          </div>
+          <div class="col-sm-4 Numbers2">
+            <select type="text" id="DosageUnit" name="DosageUnit" class="form-control Numbers2" data-ng-model="DosageUnit" data-ng-options="unit for unit in dosageUnit"></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="DosageNumber2"><small>Frequency</small></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 form-group">
+            <select type="text" id="FrequencyNumber" name="FrequencyNumber" class="form-control" data-ng-model="FrequencyNumber" data-ng-options="number for number in dosageNumber1"></select>
+          </div>
+          <div class="col-sm-9">
+            <select type="text" id="Frequency" name="Frequency" class="form-control" data-ng-model="Frequency" data-ng-options="number for number in dosageFrequency"></select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="StartDate"><small>Start Date</small></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label for="EndDate"><small>End Date</small></label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input data-ng-model="StartDate" ui-date class="form-control">
+          </div>
+          <div class="col-sm-6 form-group">
+            <input data-ng-model="EndDate" ui-date class="form-control">
+          </div>
+        </div>
+        <br>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>

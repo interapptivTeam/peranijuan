@@ -1,0 +1,33 @@
+	<div class="container" class="text-center">
+	  	<div class="text-center"><!-- {{sector.Social.budget}} -->
+		  	<h3 data-ng-cloak>{{budgetLvl[0]}} Badyet ni PNoy</h3>
+		</div>
+	</div>
+
+	<div id="chart_wrap" class="" data-ng-class="flips">
+		<div google-chart chart="chart" id="chart" select="selectSlice(selectedItem)"></div>
+	</div>
+
+    <div id="summary" class="Cards1" data-ng-style="{'color':summaryStyle}">
+    	<span data-ng-cloak>{{summary}}</span>
+    </div>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block">I'll create the {{budgetLvl[1]}} Budget!</button>
+    <br>
+    <br>
+    <div class="sliderExample">
+		<div id="red" ui-slider="colorpicker.options" ng-model="colorpicker.red"></div>
+		Red: <input ng-model="colorpicker.red">
+		<div id="green" ui-slider="colorpicker.options" ng-model="colorpicker.green"></div>
+		Green: <input ng-model="colorpicker.green">
+		<div id="blue" ui-slider="colorpicker.options" ng-model="colorpicker.blue"></div>
+		Blue: <input ng-model="colorpicker.blue">
+	</div>
+    <div id="">
+	    <ul>
+		    <li ng-repeat="item in itemSlidersPnoy">
+		        <p>{{item.name}} {{item.value}} ({{item.percentage}}%)</p>
+		        <slider floor="0" ceiling="{{item.actual}}" precision="1" data-ng-model="item.percentage" translate="sliderFormatting"></slider>
+		    </li>
+		</ul>
+	</div>

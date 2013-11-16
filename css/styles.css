@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+html, body, .Mother {
+    height:100%;
+    width: 100%;
+    min-height:100%;
+    margin:0;
+    /*background:white url('../images/grey_pattern.jpg') center repeat;*/
+    background-attachment: fixed;
+    /*overflow: hidden;*/
+}
+
+body {
+    /*width:50%;*/
+    margin: 0 auto;
+    /*background:#e6e6e6;*/
+}
+
+#logoSplash {
+	
+}
+		.sliderExample {
+			width: 500px;
+			padding: 2em;
+			background-color: #f5f5f5;
+			border: 1px solid #f0f0f0;
+			margin: 2em;
+		}
+		.sliderExample > div {
+			margin: 1em 0;
+		}
+		.vertical-container {
+			width: 15%;
+			display: inline-block;
+		}
+		#swatch {
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
+		#red .ui-slider-range { background: #ef2929; }
+		#red .ui-slider-handle { border-color: #ef2929; }
+		#green .ui-slider-range { background: #8ae234; }
+		#green .ui-slider-handle { border-color: #8ae234; }
+		#blue .ui-slider-range { background: #729fcf; }
+		#blue .ui-slider-handle { border-color: #729fcf; }
+
+#summary {
+	/*background-color: rgb(0,0,0);*/
+	/*background-color: rgba(0,0,0,0.5);*/
+	/*color: white;*/
+	font-size: 30px;
+	line-height: 30px;
+	padding: 10px;
+}
+
+#chart_wrap {
+    border:1px solid gray;
+    position: relative;
+    padding-bottom: 30%;
+    height: 0;
+    overflow:hidden;
+}
+#chart {
+
+    top: 0;
+    left: 0;
+
+}
+
+
+.Cards1 {
+	position: relative;
+	width: 100%;
+	/*height: 100%;*/
+	top: 5px;
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+	box-shadow: 1px 2px 4px rgba(0,0,0,0.2);    /*background:transparent url('/linkedcards/images/card_bg/tx_2.jpg') center center repeat;*/
+}
+
+.Panels {
+	position: absolute;
+	width: 300px;
+	left: 50%;
+	margin-left: -150px;
+}
+
+#InputPanel {
+	top: 60px;
+}
+
+#Tagline {
+	/*font-family: 'Open Sans', sans-serif;*/
+	/*font-family: 'Allerta', sans-serif;*/
+	/*font-family: 'Alex Brush', cursive;*/
+	font-family: 'Gentium Book Basic', serif;
+}
+
+#tempNotice {
+	font-family: 'Allerta', sans-serif;
+}
+
+.InfoCards {
+	padding: 5px 10px 10px;
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+	box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+}
+
+.textSmall {
+	font-size: small;
+}
+
+.ProperCase {
+	text-transform: capitalize;
+}
+
+#nav {
+	position: fixed;
+	top: 0px;
+	min-height: 40px !important;
+	background-color: #e5e5e5 !important;
+}
+
+#Brand {
+	padding: 5px 0px 0px 15px !important;
+}
+
+#DrugInfo {
+	top: 60px;
+}
+
+#PatientMedicineCard {
+	top: 160px;
+}
+
+#DrugInfoForm {
+	position: absolute;
+	width: 300px;
+	top: 360px;
+}
+
+.RXInfoCards {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.Number1 {
+	padding: 0px 0px 0px 12px !important;
+}
+
+.Number2 {
+	padding: 0px 0px 0px 5px !important;
+}
+
+.Number2 {
+	padding: 0px 12px 0px 0px !important;
+}
+
+.Numbers {
+	padding: 0px !important;
+}
+
+.separators {
+	color: white;
+}
+
+.RX {
+	position: relative;
+	font-size: 120%;
+}
+
+.RXhr {
+	margin: 5px 0px !important;
+}

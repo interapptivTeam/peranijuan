@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Stalemate);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Amaranth:400,700);
+
+.startfont1 {
+	font-family: 'Stalemate', cursive;
+	font-size:36px;
+	color: #6A6A8D;
+}
+.startfont2 {
+	font-family: 'Oswald', sans-serif;
+	font-size:9px;
+	color:#333;
+}
+.start {
+	background-color:#e6e6e6;
+}
+.screen1 {
+	background: url('/peranijuan/images/bg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*.screen1all {
+	opacity:0.9;
+}*/
+.screenfont1 {
+	font-family: 'Amaranth', sans-serif;
+	font-size:26px;
+	color:#fff;
+	text-shadow: 2px 2px #333;
+}
+.screenfont2 {
+/*	font-family: 'Amaranth', sans-serif;*/
+	color:#fff;
+	text-shadow: 1px 1px #333;
+}
+.screenfont3 {
+	font-family: 'Oswald', sans-serif;
+	font-size:9px;
+	color:#333;
+}
+.screen2 {
+	background: url('/peranijuan/images/bg2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.screen3 {
+	background: url('/peranijuan/images/bg3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
