@@ -1,5 +1,7 @@
 peranijuan
 ==========
+Interactive and mobile-responsive visualization app using the Philippine Government open data. 
+
 
 Front-end:
 
