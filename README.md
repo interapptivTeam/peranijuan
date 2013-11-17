@@ -5,7 +5,9 @@ Front-end:
 
 - HTML5,
 - CSS3
+- animate.css
 - Twitter Bootstrap
+- oneall social media login API
 - AngularJS 
 - Google Charts (Angular implementation)
 - very little jQuery
@@ -13,5 +15,5 @@ Front-end:
 Back-end:
 
 - Google Apps Script
-- Google Spreadsheet as query filters
+- Google Spreadsheet as query filters (automated, time-driven event-triggered direct link to open.data API)
 - PHP (as intermediary)
