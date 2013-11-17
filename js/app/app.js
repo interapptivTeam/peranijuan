@@ -37,9 +37,15 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl:'partials/expenditures.html',
                 controller:'expendituresCtrl'
             })
+            .when('/peranijuan/departments', {
+                templateUrl:'partials/departments.html',
+                controller:'departmentsCtrl'
+            })
             .otherwise({
                 templateUrl:'partials/start.html',
+                // templateUrl:'partials/menu.html',
                 controller:'startCtrl'
+                // controller:'menuCtrl'
             });
 
         $locationProvider.html5Mode(true).hashPrefix('!');

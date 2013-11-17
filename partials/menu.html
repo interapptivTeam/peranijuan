@@ -1,9 +1,29 @@
-<br>
-<br>
-<div class="container" id="screen3" data-ng-hide="screen3">
-	<div class="text-center">
-		<h5><span data-ng-click="budget()">Budget</span></h5> 
-		<h5 data-ng-click="source()">Source</h5> 
-		<h5 data-ng-click="expenditures()">Expenditures</h5> 
+<div id="menu" data-ng-hide="menu">
+	<div  class="container" style="margin-bottom:10px;">
+		<br /><br /><br />
+		<div class="col-md-3 col-md-offset-3 boxed-red1" data-ng-click="source()">
+	 		<center><img src="images/sources.png"/ width="100px"></center>
+	 		<span>Source</span>
+		</div>
+
+	 	<div class="col-md-3 boxed-blue1" data-ng-click="budget()">
+			<center><img src="images/budget.png"/ width="100px"></center>
+	 		<span>Budget</span> 
+	 	</div>
+
 	</div>
+
+	<div class="container">
+       	<div class="col-md-6 col-md-offset-3 boxed-yellow" data-ng-click="expenditures()">
+       		<center><img src="images/monitor.png"/ width="100px"></center>
+	 		<span>Monitor</span>
+		</div>
+
+	</div>
+	<center>
+        <div class="col-md-12 screenfont3">
+            <br />
+            Copyright &copy; 2013 by Interapptiv.co. All rights reserved
+        </div>
+        </center>
 </div>

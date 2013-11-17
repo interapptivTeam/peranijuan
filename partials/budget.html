@@ -1,35 +1,73 @@
-<div class="container">
-		<div class="col-md-6 col-md-offset-3">
-	  	<div class="text-center"><!-- {{sector.Social.budget}} -->
-		  	<h3 data-ng-cloak>{{budgetLvl[0]}} Badyet ni PNoy</h3>
+<br /><div class="container">
+		<center><div class="col-md-2 col-md-offset-3 menured" data-ng-click="source()">
+	 		<span>Source</span>
 		</div>
-	</div>
+		<div class="col-md-2 menublue" data-ng-click="budget()">
+	 		<span>Budget</span>
+		</div>
+		<div class="col-md-2 menuyellow" data-ng-click="expenditures()">
+	 		<span>Monitor</span>
+		</div>
+	</div></center>
+<div class="container">
+<br />
+<div class="col-md-4 col-md-offset-4 wtitle"><!-- {{sector.Social.budget}} -->
+		  	<span data-ng-cloak>Budget ni PNoy<br />2013</span>
+		</div>
+	<div class="col-md-4 col-md-offset-4 chartwrap"  data-ng-class="flips">
+		
 
-	<div id="chart_wrap" class="" data-ng-class="flips">
-		<div google-chart chart="chart" id="chart" select="selectSlice(selectedItem)"></div>
+		<div google-chart chart="chart" select="selectSlice(selectedItem)" style="padding-bottom:30px;"></div>
+		
+		<ul class="stats-data clearfix">
+		
+	        <li data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[0]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[0]}}"><span>{{sectors[0]}}</span><strong>{{itemSlidersPnoy[sectors[0]].percentage}}%</strong></a></li>
+	        <li class="second" data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[1]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[1]}}"><span>{{sectors[1]}}</span><strong>{{itemSlidersPnoy[sectors[1]].percentage}}%</strong></a></li>
+	        <li class="third" data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[2]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[2]}}"><span>{{sectors[2]}}</span><strong>{{itemSlidersPnoy[sectors[2]].percentage}}%</strong></a></li>
+	        <li class="fourth" data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[3]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[3]}}"><span>{{sectors[3]}}</span><strong>{{itemSlidersPnoy[sectors[3]].percentage}}%</strong></a></li>
+	        <li class="fifth" data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[4]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[4]}}"><span>{{sectors[4]}}</span><strong>{{itemSlidersPnoy[sectors[4]].percentage}}%</strong></a></li>
+	        <li class="sixth" data-toggle="tooltip" title="{{itemSlidersPnoy[sectors[5]].value}}" data-placement="top"><a href="#" style="border-color: {{sectorColors[5]}}"><span>{{sectors[5]}}</span><strong>{{itemSlidersPnoy[sectors[5]].percentage}}%</strong></a></li>
+	    </ul>
+	     <br>
+	    <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">I'll create the Budget!</button>
+	    <br>
+	    <br>
+	    </div>
 	</div>
+	<center>
+	<div class="container">
+        <div class="col-md-12 screenfont3">
+            <br />
+            Copyright &copy; 2013 by Interapptiv.co. All rights reserved
+        </div>
+        </center>
+   	</div>
 
-    <div id="summary" class="Cards1" data-ng-style="{'color':summaryStyle}">
-    	<span data-ng-cloak>{{summary}}</span>
-    </div>
-    <br>
-    <button class="btn btn-primary btn-lg btn-block">I'll create the {{budgetLvl[1]}} Budget!</button>
-    <br>
-    <br>
-    <div class="sliderExample">
-		<div id="red" ui-slider="colorpicker.options" ng-model="colorpicker.red"></div>
-		Red: <input ng-model="colorpicker.red">
-		<div id="green" ui-slider="colorpicker.options" ng-model="colorpicker.green"></div>
-		Green: <input ng-model="colorpicker.green">
-		<div id="blue" ui-slider="colorpicker.options" ng-model="colorpicker.blue"></div>
-		Blue: <input ng-model="colorpicker.blue">
-	</div>
-    <div id="">
-	    <ul>
-		    <li ng-repeat="item in itemSlidersPnoy">
-		        <p>{{item.name}} {{item.value}} ({{item.percentage}}%)</p>
-		        <slider floor="0" ceiling="{{item.actual}}" precision="1" data-ng-model="item.percentage" translate="sliderFormatting"></slider>
-		    </li>
-		</ul>
-	</div>
-</div>
+	<!-- <div id="canvasloader-container" class="wrapper" data-ng-show="spiralLoader"></div> -->
+   	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+	      <div class="container">
+		    <div class="col-md-12">
+			    <ul>
+				    <li ng-repeat="item in itemSlidersJuan">
+				        <span class="itemname1"><br />{{item.name}} {{item.percentage}}%<br /></span>
+				        <!-- <slider floor="0" ceiling="{{item.actual}}" precision="1" data-ng-model="item.percentage" translate="sliderFormatting"></slider> -->
+				    	<!-- <div class="sliderExample"> -->
+							<div id="red" ui-slider="colorpicker.options" min="0" max="20" step="1" data-ng-model="item.percentage"></div>
+						<!-- </div> -->
+				    </li>
+				</ul>
+	       	</div>
+	   	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Create Budget</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -3,21 +3,25 @@
 if(!empty($_GET["sector"])) {
   $sector = $_GET["sector"];
 
-  $homepage = "http://cors.io/spreadsheets.google.com/feeds/list/0AtRRMrLcXAG0dHczNnA2YzhiTHVXbVpBa2haakYyS1E/".$sector."/public/values?alt=json";
-  echo file_get_contents($homepage,false);
+  //Pera ni Juan Auto Appro Summary
+  //https://docs.google.com/spreadsheet/pub?key=0AtRRMrLcXAG0dHczNnA2YzhiTHVXbVpBa2haakYyS1E&output=html
+  $homepageAuto = "http://cors.io/spreadsheets.google.com/feeds/list/0AtRRMrLcXAG0dHczNnA2YzhiTHVXbVpBa2haakYyS1E/".$sector."/public/values?alt=json";
+
+  //Pera ni Juan New Appro Summary 
+  //https://docs.google.com/spreadsheet/pub?key=0AtRRMrLcXAG0dDhvOGxORDhWNDBIczcxelVBQlVGckE&output=html
+  $homepageNew = "http://cors.io/spreadsheets.google.com/feeds/list/0AtRRMrLcXAG0dDhvOGxORDhWNDBIczcxelVBQlVGckE/".$sector."/public/values?alt=json";
+  
+  $homepageAuto = json_decode(file_get_contents($homepageAuto));
+  $homepageNew = json_decode(file_get_contents($homepageNew));
+
+  $approArray = array(
+    "autoAppro" => $homepageAuto,
+    "newAppro" => $homepageNew
+	);
+
+header('Content-type: application/json'); 
+  echo json_encode($approArray);
   
 }
-  // $homepage = "https://spreadsheets.google.com/tq?key=0AtRRMrLcXAG0dHczNnA2YzhiTHVXbVpBa2haakYyS1E&tq=select%20A%2CB%2CC%2CD&gid=".$sector;
-// $sheetkey = "0AgauRw-zlp7fdFZSN3dBUzVpV04yU05HVVZ5SVBJVmc";
-// $querystr = "select+A%2c+D+order+by+A";
-// $homepage = "http://spreadsheets.google.com/a/google.com/tq?key=".$sheetkey."&tq=".$querystr;
 
-// $json = file_get_contents($homepage,FALSE);
-// $start = stripos($json, '"rows":');
-// $end = strripos($json, ");");
-
-// $finalJSON = substr($json, $start, -3);
-// $finalJSON = "{" . $finalJSON;
-
-//   echo $finalJSON;
 ?>

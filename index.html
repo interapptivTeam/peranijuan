@@ -5,29 +5,45 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Pera ni Juan</title>
 
+<link href="css/reset.css" rel="stylesheet" type="text/css">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
-<!-- <link href="/peranijuan/css/animate-slides.css" rel="stylesheet"> -->
+<link href="css/animate-slides.css" rel="stylesheet">
 <link href="css/animate-flips.css" rel="stylesheet">
+<link href="css/angular-slider.css" rel="stylesheet">
 <link href="css/app.css" rel="stylesheet">
-<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
-<!-- <script src="js/custom/googleCharts.js"></script> -->
+<script type="text/javascript">
+ var oneall_js_protocol = (("https:" == document.location.protocol) ? "https" : "http");
+ document.write(unescape("%3Cscript src='" + oneall_js_protocol + "://peranijuanteam.api.oneall.com/socialize/library.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </head>
 
 <body data-ng-class="bodyClass">
 	<div data-ng-view=""></div>
+<!-- The plugin will be embedded into this div //-->
+<div class="col-md-6 col-md-offset-5" data-ng-show="shares">
+<div id="social_login_container"></div>
+</div>
+<script type="text/javascript">
+ oneall.api.plugins.social_login.build("social_login_container", {
+  'providers' :  ['facebook', 'google', 'twitter'], 
+  'callback_uri': 'INSERT YOUR CALLBACK URI HERE'
+ });
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
-<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-<script src="js/libraries/gestures.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-touch.min.js  "></script>
+<!-- <script src="js/libraries/gestures.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-touch.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-animate.min.js"></script>
-<script src="js/libraries/ui-slider.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/accounting.js/0.3.2/accounting.min.js"></script>
+<!-- <script src="js/libraries/angular-slider.js"></script> -->
+<script src="js/libraries/ui-slider.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/accounting.js/0.3.2/accounting.min.js"></script>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.3.0/lodash.min.js"></script> -->
 <script src="js/libraries/ng-google-chart.js"></script>
 <script src="js/app/app.js"></script>
@@ -42,6 +58,9 @@
 <script src="js/app/controllers/budgetCtrl.js"></script>
 <script src="js/app/controllers/sourceCtrl.js"></script>
 <script src="js/app/controllers/expendituresCtrl.js"></script>
+<script src="js/custom/jqlogic.js"></script>
+<!-- <script src="js/libraries/canvasloader.min.js"></script> -->
+<!-- <script src="js/custom/spiral_loader.js"></script> -->
 
 </body>
 </html>

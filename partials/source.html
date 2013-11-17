@@ -1,0 +1,75 @@
+<br /><div class="container">
+        <center><div class="col-md-2 col-md-offset-3 menured" data-ng-click="source()">
+            <span>Source</span>
+        </div>
+        <div class="col-md-2 menublue" data-ng-click="budget()">
+            <span>Budget</span>
+        </div>
+        <div class="col-md-2 menuyellow" data-ng-click="expenditures()">
+            <span>Monitor</span>
+        </div>
+    </div></center>
+<div class="container">
+	<br />
+		<div class="col-md-3 col-md-offset-4 wtitle1">
+		  	<h2>THE SOURCES</h2>   
+		</div>
+</div><br />
+<div class="container">
+	<!--  Widget Stats -->
+	<div class="col-md-8">
+        <div class="tabs_framed styled widget-stats">
+            <ul class="tabs clearfix">
+                <li class="active"><a href="" data-toggle="tab" data-ng-click="changeChart('chart2013')">2013</a></li>
+                <li><a href="" data-toggle="tab" data-ng-click="changeChart('chart2012')">2012</a></li>
+                <li><a href="" data-toggle="tab" data-ng-click="changeChart('chart2011')">2011</a></li>
+            </ul>
+
+            <div class="tab-content boxed clearfix chartwrapcopy">
+                <div class="tab-pane fade in active" id="2013">
+             	    <div google-chart chart="chart" select="selectSlice(selectedItem)" style="padding-bottom:30px;"></div>
+                </div>
+                <div class="tab-pane fade" id="2012">
+                </div>
+                <div class="tab-pane fade" id="2011">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    <div class="tabs_framed styled widget-stats">
+        <ul class="tabs clearfix">
+            <li class="active"><a href="#" data-toggle="tab">DEPARTMENT</a></li>
+            
+        </ul>{{sources[0]}} - {{sources[1][2]}} {{sources[2][2]}} {{sources[3][2]}}
+         <div class="tab-content boxed clearfix chartwrapcopy1">
+            <ul>
+                    <li class="dept1" data-ng-show="chart2011" data-ng-repeat="source in sources">- {{source[0]}} - {{source[1][2]}}</li>
+                    <li class="dept1" data-ng-show="chart2012" data-ng-repeat="source in sources">- {{source[0]}} - {{source[2][2]}}</li>
+                    <li class="dept1" data-ng-show="chart2013" data-ng-repeat="source in sources">- {{source[0]}} - {{source[3][2]}}</li>
+            </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="tabs_framed styled widget-stats">
+                <ul class="tabs clearfix">
+                    <li class="active"><a href="#" data-toggle="tab">COMPARATIVE YEARS</a></li>
+                </ul>
+             <div class="tab-content boxed clearfix chartwrapcopy dept1">
+                       <div class="col-md-8 col-md-offset-2 "> <div google-chart chart="comparativeChart" select="selectSlice(selectedItem)" style="padding-bottom:30px;">
+                       </div>
+                       </div>
+                </div>
+            </div>
+        </div>
+        <center>
+        <div class="col-md-12 screenfont3">
+            <br />
+            Copyright &copy; 2013 by Interapptiv.co. All rights reserved
+        </div>
+        </center>
+    </div>
+        <!--/ Widget Stats -->

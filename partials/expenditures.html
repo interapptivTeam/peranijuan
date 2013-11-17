@@ -1,33 +1,64 @@
-	<div class="container" class="text-center">
-	  	<div class="text-center"><!-- {{sector.Social.budget}} -->
-		  	<h3 data-ng-cloak>{{budgetLvl[0]}} Badyet ni PNoy</h3>
+<br /><div class="container">
+		<center><div class="col-md-2 col-md-offset-3 menured" data-ng-click="source()">
+	 		<span>Source</span>
+		</div>
+		<div class="col-md-2 menublue" data-ng-click="budget()">
+	 		<span>Budget</span>
+		</div>
+		<div class="col-md-2 menuyellow" data-ng-click="expenditures()">
+	 		<span>Monitor</span>
+		</div>
+	</div></center>
+<div id="expenditures" data-ng-hide="expenditures">
+	<div  class="container" style="margin-bottom:10px;">
+		<br /><br />
+	<div class="container">
+       	<div class="col-md-6 col-md-offset-3 boxed-yellow" data-ng-click="dept()">
+       		<center><img src="images/general.png"/ width="100px"></center>
+	 		<span>General Public Services</span>
+		</div>
+
+	</div>
+	<br />
+	
+	<div class="container">
+		<div class="col-md-3 col-md-offset-3 boxed-red" data-ng-click="dept()">
+	 		<center><img src="images/economic.png"/ width="100px"></center><br />
+	 		<span>Economic Services</span>
+		</div>
+
+	 	<div class="col-md-3 boxed-blue" data-ng-click="dept()">
+			<center><img src="images/defence.png"/ width="100px"></center><br />
+	 		<span>Defence Services</span> 
+	 	</div>
+
+	</div>
+	
+	<br />
+	<div class="container">
+       	<div class="col-md-2 col-md-offset-3 boxed-green" data-ng-click="dept()">
+       		<center><img src="images/monitor.png"/ width="80px"></center><br /><br />
+	 		<span>Debt Servicing</span>
+		</div>
+
+	
+       	<div class="col-md-2  boxed-brown" data-ng-click="dept()">
+       		<center><img src="images/special.png"/ width="80px"></center><br /><br />
+	 		<span>Special Funds</span>
+		</div>
+
+	
+		<div class="col-md-2  boxed-turquoise" data-ng-click="dept()">
+	 		<center><img src="images/social.png"/ width="80px"></center><br /><br />
+	 		<span>Social Services</span>
 		</div>
 	</div>
-
-	<div id="chart_wrap" class="" data-ng-class="flips">
-		<div google-chart chart="chart" id="chart" select="selectSlice(selectedItem)"></div>
+	
+	<center>
+        <div class="col-md-12 screenfont3">
+            <br />
+            Copyright &copy; 2013 by Interapptiv.co. All rights reserved
+        </div>
+        </center>
 	</div>
-
-    <div id="summary" class="Cards1" data-ng-style="{'color':summaryStyle}">
-    	<span data-ng-cloak>{{summary}}</span>
-    </div>
-    <br>
-    <button class="btn btn-primary btn-lg btn-block">I'll create the {{budgetLvl[1]}} Budget!</button>
-    <br>
-    <br>
-    <div class="sliderExample">
-		<div id="red" ui-slider="colorpicker.options" ng-model="colorpicker.red"></div>
-		Red: <input ng-model="colorpicker.red">
-		<div id="green" ui-slider="colorpicker.options" ng-model="colorpicker.green"></div>
-		Green: <input ng-model="colorpicker.green">
-		<div id="blue" ui-slider="colorpicker.options" ng-model="colorpicker.blue"></div>
-		Blue: <input ng-model="colorpicker.blue">
-	</div>
-    <div id="">
-	    <ul>
-		    <li ng-repeat="item in itemSlidersPnoy">
-		        <p>{{item.name}} {{item.value}} ({{item.percentage}}%)</p>
-		        <slider floor="0" ceiling="{{item.actual}}" precision="1" data-ng-model="item.percentage" translate="sliderFormatting"></slider>
-		    </li>
-		</ul>
-	</div>
+</div>
